@@ -1,0 +1,39 @@
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.galdiv {
+    font-size: 15px;
+    width: 15%;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.galdiv b {
+    font-size: 14px;
+    display: block;
+    word-wrap: break-word;
+}
+
+.galdiv img {
+    width: auto;
+    height: 145px !important;
+    border: solid #528AAE;
+        
+}
+
+.galtxt {
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+.galdiv { width: 45%; font-size: 15px; }
+}
+

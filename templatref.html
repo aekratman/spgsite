@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="A basic CSS/HTML template.">
+<link rel="icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Basic CSS/HTML Template | birdrobot.party</title>
+
+<link rel="stylesheet" href="/stylevariables.css">
+<link rel="stylesheet" href="css/fonts.css">
+
+
+
+</head>
+
+<body>
+<!-- Start of webpage content -->
+<section class="layout">
+
+<!-- HEADER -->
+<div class="header">
+	<center>
+		<div class="dumb3">
+			<h1>gjfhjdgh</h1>
+		</div>
+		
+	Put an image here, or maybe remove the background and border entirely and style the text real cool.
+	</center>
+</div>
+
+<!-- LEFT SIDEBAR -->
+<div class="leftSide">
+
+	<details open>
+	<summary>This is a drawer</summary>
+	<ul class="navul">
+	<li class="navli">Link One</li>
+	<li class="navli">Link Two</li>
+	<li class="navli">Link Three</li>
+	</ul>
+	</details>
+	
+	<details>
+	<summary>Why I Love Drawers</summary>
+	<ol>
+	<li>They give the user the power to hide annoying elements like flashing gifs.</li>
+	<li>You can put a bunch of text under a "read more" LiveJournal-style.</li>
+	<li>They reduce clutter.</li>
+	</ol>
+	</details>
+	
+			<h3>Links</h3>
+			<h4>Reference</h4>
+			<ul>
+				<li><a href="https://petrapixel.neocities.org/" target="_blank">Petra Pixel</a></li>
+				<li><a href="https://leewarrick.com/blog/css-only-menus/" target="_blank">CSS-only menus</a></li>
+				<li><a href="https://www.w3schools.com/colors/colors_hex.asp" target="_blank">Color keywords list</a></li>
+				<li><a href="https://divtable.com/table-styler/" target="_blank">CSS/HTML Table Styler</a></li>
+				<li><a href="https://layout.bradwoods.io/" target="_blank">CSS Layout Generator</a></li>
+				<li><a href="https://css-shape.com/" target="_blank">CSS Shape</a></li>
+				<li><a href="https://sadgrl.online/resources/" target="_blank">sadgrl.online</a></li>
+				<li><a href="https://www.lissaexplains.com/" target="_blank">Lissa Explains</a></li>
+				<li><a href="https://www.w3schools.com/charsets/ref_utf_symbols.asp" target="_blank">HTML Unicode Ref</a></li>
+			</ul>
+			<h4>Tools and fonts</h4>
+			<ul>
+				<li><a href="https://www.dafont.com" target="_blank">Da Font</a></li>
+				<li><a href="http://www.thefontfactory.com/index.shtml" target="_blank">The Font Factory</a></li>
+				<li><a href="https://notepad-plus-plus.org/" target="_blank">Notepad++ editor</a></li>
+			</ul>
+			<p>Also check out my main <a href="https://birdrobot.party/links.html" target="_blank">links page</a>!</p>
+</div>
+
+<!-- MAIN BODY CONTENT -->
+<div class="body">
+	<h2>What is this?</h2>
+	I've always found it useful to have a template to start with when I'm putting together a new website. I'm also constantly forgetting the exact syntax of certain things I don't use often. So... I put together this template/cheat sheet!
+	
+	<p><mark>Please steal this template!</mark> That's why I made it! I want to help people get started on their websites. I'd really appreciate a link back to <a href="https://birdrobot.party">birdrobot.party</a> if you find this useful, but credit is not mandatory.
+	<br>
+	<br>Right click and select "view page source" to grab the code, or <a href="template.html" download>click here</a> to download template.html.
+	</p>
+	
+	<hr>
+	
+	<h2>About the CSS for this page itself...</h2>
+	
+	<b>line-height: 1.5em;</b>
+	<br>I think that somewhere around 1.5 or 1.6em is ideal for readability.
+
+	<p>grid:
+		<br>"header header header" auto
+		<br>"leftSide body rightSide" 1fr
+		<br>"footer footer footer" auto
+		<br><b>/ 25% 50% auto;</b>
+	<br>The bolded numbers here specify that the left column must take up 25% of the screen, the middle must take up 50%, and the right column should just align itself with them using what space is left over.
+	<br>
+	<br>This, on the other hand...
+	<br><b>/ auto 50% auto;</b>
+	<br>...would make it so the middle column must take up 50%, and the sidebars divide the remaining space between them based on what they contain.</p>
+	
+	<hr>
+	
+	<h2>CSS Reference</h2>
+	
+	<details>
+	<summary>Backgrounds</summary>
+	<br>
+		<blockquote>
+			background-color: #fff;
+			<br>background-image: url("image.png");
+			<br>background-repeat: no-repeat | repeat | repeat-y | repeat-x;
+			<br>background-position: top left | bottom right | center;
+			<br>background-attachment: fixed | scroll;
+		</blockquote>
+		
+		To change opacity of a div's background but not the text or other elements, use RGBA values.
+		<blockquote>
+			background: rgba(154, 205, 50, 0.3);
+		</blockquote>
+	</details>
+	
+	<details>
+	<summary>Borders</summary>
+	<br>
+	Order for values: top, right, bottom, left
+	<br>If 3 values, defines top, right/left, and bottom. If 2 values, defines top/bottom and right/left.
+		<blockquote>
+			border: 5px solid #E874A5;
+			<br>border-radius: 25px;
+			<br>border-style: dotted | dashed | double | groove | ridge | inset | outset | none | hidden;
+			<br>border-width: 4px;
+			<br>border-color: red green blue yellow;
+		</blockquote>
+	</details>
+	
+	<details>
+	<summary>Images</summary>
+	<br>
+	<u>Fill:</u> default; distorts image to fill container. 
+	<br><u>Cover:</u> fill the container; preserves the aspect ratio by cropping.
+	<br><u>Contain:</u> does the same, but does not cut content.
+		<blockquote>
+			object-fit: fill | cover | contain;
+		</blockquote>
+	
+	Basic gallery with uniform thumbnails:
+		<blockquote>
+			.gallery {
+			<br>display: flex;
+			<br>flex-wrap: wrap;
+			<br>margin:10px auto;
+			<br>}
+
+			<br>.gallery img {
+			<br>width:175px;
+			<br>height:175px;
+			<br>object-fit: cover;
+			<br>}
+		</blockquote>
+	</details>
+	
+	<details>
+	<summary>Shadows</summary>
+	<br>
+		<div style="width:400px;padding:8px;margin:auto;border:1px solid black;box-shadow: 10px 10px SlateGray;">box-shadow: 10px 10px SlateGray;</div>
+		
+		<br>
+		
+		<div style="width:400px;padding:8px;margin:auto;border:1px solid black;box-shadow: 10px 10px 5px SlateGray;">box-shadow: 10px 10px 5px SlateGray</div>
+		
+		<br>
+		
+		<div style="width:400px;padding:8px;margin:auto;border:1px solid black;box-shadow: 5px 5px YellowGreen, 10px 10px DodgerBlue, 15px 15px SlateGray;">box-shadow: 5px 5px YellowGreen, 10px 10px DodgerBlue, 15px 15px SlateGray;</div>
+		
+		<br>
+	
+	<span style="font-size:18px;text-shadow: 2px 2px YellowGreen;">Basic text shadow</span>
+	
+		<blockquote>
+			text-shadow: -1px 0 YellowGreen;
+		</blockquote>
+		
+	<span style="font-size:18px;text-shadow: 2px 2px 10px DodgerBlue;">Text shadow with blur</span>
+		<blockquote>
+			text-shadow: 2px 2px 10px DodgerBlue;
+		</blockquote>
+	</details>
+	
+	<details>
+	<summary>Transform and Transition</summary>
+	<br>
+	
+	<blockquote>
+		transform: rotate(6deg);
+		<br>transform: scale(1, 1.5);
+		<br>transform: skewX(20deg) | skewY(-20deg);
+		<br>transform: skew(20deg, 10deg);
+	</blockquote>
+	
+	<div style="display: flex;flex-wrap: wrap;">
+	<div style="margin:10px;border:1px solid black;width:50px;padding:4px;transform: rotate(6deg);">Rotated div!</div>
+	
+	<div style="margin:10px;border:1px solid black;width:50px;padding:4px;transform: scale(1, 1.5);">Scale div!</div>
+	
+	<div style="margin:10px;border:1px solid black;width:50px;padding:4px;transform: skewX(20deg);">Skew X div!</div>
+	
+	<div style="margin:10px;border:1px solid black;width:50px;padding:4px;transform: skewY(-20deg);">Skew Y div!</div>
+	
+	<div style="margin:10px;border:1px solid black;width:50px;padding:4px;transform: skew(20deg, 10deg);">Skew div!</div>
+	
+	</div>
+	
+	<br>
+	
+	<blockquote>
+		#examplediv {
+		<br>margin:10px;
+		<br>border:1px solid black;
+		<br>width:100px;
+		<br>padding:4px;
+		<br>transition: width 1s, background .5s, transform .5s ease;
+		<br>}
+
+		<br>#examplediv:hover {
+		<br>width:200px;
+		<br>background:YellowGreen;
+		<br>transform: skewX(20deg);
+		<br>}
+
+	</blockquote>
+	<br>
+		<div id="examplediv">Hover here!</div>
+		<br>
+	</details>
+	
+	<details>
+	<summary>Text Attributes and Alignment</summary>
+	<br>
+		<blockquote>
+			text-align: left | right | center | justify;
+			<br>vertical-align: top | middle | bottom | sub | super;
+			<br>text-decoration-line:underline | overline | line-through;
+			<br>text-decoration-style:solid | wavy | double | dotted | dashed
+			<br>text-decoration:underline 2px DodgerBlue;
+		</blockquote>
+		
+	Lorem ipsum <span style="vertical-align:super;">superscript</span> dolor sit amet <span style="vertical-align:sub;">subscript</span>.
+	
+	<p><span style="text-decoration:overline 2px dotted SlateGray;">text-decoration:overline 2px dotted SlateGray;</span></p>
+	
+	<p><span style="text-decoration:underline 2px DodgerBlue;">text-decoration:underline 2px DodgerBlue;</span>
+	
+	<p><span style="text-decoration:overline underline dashed YellowGreen;">text-decoration:overline underline dashed YellowGreen;</span></p>
+	
+	</details>
+	
+	<details>
+	<summary>Misc. Odds and Ends</summary>
+	<br>
+	<span style="font-size:24px;color: White;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Easy bordered text using text-shadow:</span>
+		<blockquote>
+			color: White;
+			<br>text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		</blockquote>
+	
+	<span style="background-image: linear-gradient(to right, deeppink, orange, YellowGreen, dodgerblue, darkorchid);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Rainbow gradient text:</span>
+	<blockquote>
+		background-image: linear-gradient(to right, deeppink, orange, YellowGreen, dodgerblue, darkorchid);
+		<br>-webkit-background-clip: text;
+		<br>-webkit-text-fill-color: transparent;
+	</blockquote>
+	</details>
+
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<div class="rightSide">
+	<div class="box">
+	<div class="boxtop">Title Bar</div>
+	<p>Here's a box! You can put it anywhere.</p>
+	</div>
+	
+	<div class="box">
+	<p>(BTW, you can leave out the title bar thing if you want.)</p>
+	</div>
+	
+	<div class="box">
+	<div class="boxtop">&#9728; Tip</div>
+	<p>A pixel measurement is fixed, while a percentage is relative to the size of the viewer's browser window.</p>
+	</div>
+	
+	<div class="box">
+	<div class="boxtop">&#9728; Tip</div>
+	<p>I wanted to put all the basics in one file for reference, but you should generally keep your CSS in a separate file so you can easily apply the styling to multiple pages.
+	<br>
+	<br>To do that, put the following in the &lt;head> tag: &lt;link href="css/style.css" rel="stylesheet" type="text/css" media="all"></p>
+	</div>
+	
+	<div class="box">
+	<div class="boxtop">&#9728; Tip</div>
+	<p>You can make HTML code visible as text by using the unicode character for at least one of the brackets: &amp;lt; for &lt; and &amp;gt; for &gt;.</p>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer"><a href="https://copyheart.org/" target="new">&#9825; Copyheart</a> 2025-2026. Please copy and share freely! Assembled by <a href="https://birdrobot.party" target="_blank">Lumi</a></div>
+</section>
+
+<!-- End of webpage content -->
+</body>
+</html>

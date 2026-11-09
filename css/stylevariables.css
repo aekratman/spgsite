@@ -1,0 +1,326 @@
+:root {
+	--pagebg:Black;
+	--headerbg:lightblue;
+	--leftbg:White;
+	--bodybg:White;
+	--rightbg:White;
+	--footerbg:White;
+	
+	--boxbg:White;
+	--boxtopbg:DodgerBlue;
+	--boxtoptext:White;
+	
+	--blockquotebg:rgba(154, 205, 50, 0.3);
+	
+	--grad1: black;
+	--grad2:rgb(0, 81, 161);
+	
+	--text:Black;
+	--link:Blue;
+	--linkh:DodgerBlue;
+	
+	--mainborder:Black;
+	
+	--highlight:rgba(30, 144, 255, 0.3);
+	
+	--h1:White;
+	--h1outline:Black;
+	
+	--h2:DodgerBlue;
+	--h3:SlateGray;
+	
+	--hr:YellowGreen;
+	
+	--summaryc:SlateGray;
+	--bodysummary:White;
+	--menuhover:rgba(154, 205, 50, 0.3);
+	--summaryt:White;
+	--bodysummaryt:Black;
+}
+
+body {
+	background-color: var(--pagebg);
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
+	font-size: 14px;
+	line-height: 1.5em;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+	
+a:link { color: var(--link); text-decoration:underline var(--linkunderline) wavy 1px; }
+a:visited { color: var(--link); text-decoration:underline var(--linkunderline) wavy 1px; }
+a:hover { color: var(--linkh); text-decoration:underline var(--linkhunderline) wavy 1px; }
+
+/* Customize the way the grid is set up here. */
+
+.layout {
+	width:90%; 
+	margin:3% auto; /* Centers the main grid and adds some space at the top. */
+	display: grid;
+	grid:
+		"header header header" auto
+		"leftSide body body" 1fr
+		"footer footer footer" auto
+		/ 20% 50% auto;
+	gap: 15px;
+}
+
+.header { 
+	grid-area: header; 
+	background:var(--headerbg);
+	border:1px solid var(--mainborder);
+	background-image: linear-gradient(var(--grad1), var(--grad2));
+}
+
+.leftSide { 
+	grid-area: leftSide;
+	background:var(--leftbg);
+	border:1px solid var(--mainborder);
+	padding: 0;
+}
+
+.body { 
+	grid-area: body; 
+	background:var(--bodybg);
+	border:1px solid var(--mainborder);
+	text-align:justify;
+	padding:8px 12px;
+}
+
+.rightSide { 
+	grid-area: rightSide;
+	overflow: hidden; 
+	background:var(--rightbg);
+}
+
+.footer { 
+	grid-area: footer;
+	background:var(--footerbg);
+	border:1px solid var(--mainborder);
+	padding:8px;
+	text-align:center;
+}
+
+/* Optional: instruct mobile browsers how to collapse the grid. */
+@media (max-width: 800px) {
+	.layout {
+		grid-template:
+			"header"
+			"leftSide"
+			"body"
+			"rightSide"
+			"footer";
+		}
+}
+
+.box {
+	background-color:var(--boxbg);
+	border:1px solid var(--mainborder);
+	margin:0 auto 15px;
+}
+
+.boxtop {
+	background:var(--boxtopbg);
+	color:var(--boxtoptext);
+	padding:8px;
+}
+
+.box p {
+	margin:8px;
+}
+
+summary {
+	background: var(--summaryc);
+	padding:4px;
+	color:var(--summaryt);
+	font-weight:bold;
+}
+
+summary:hover {
+	cursor:pointer;
+}
+
+details {
+	width:100%;
+	margin:0 auto 4px;
+}
+
+.body summary {
+	background: var(--bodysummary);
+	color:var(--bodysummaryt);
+	border:1px solid var(--mainborder);
+	padding:6px;
+}
+
+.navli {
+	border-bottom:1px dotted var(--mainborder);
+	list-style-type: none;
+}
+
+.navli:hover {
+	background: var(--menuhover);
+	cursor:pointer;
+}
+
+.navul {
+	border-right:1px dotted var(--mainborder);
+	padding:0px;
+	margin:4px auto;
+}
+
+h1 {
+	color: var(--h1);
+	font-size: 48px;
+	text-shadow: -1px 0 var(--h1outline), 0 1px var(--h1outline), 1px 0 var(--h1outline), 0 -1px var(--h1outline);
+}
+
+h2 {
+	color: var(--h2);
+	font-size: 24px;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+h4 {
+	color: var(--h4);
+	font-size: 24px;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	margin: 0;
+}
+
+h3 {
+	color: var(--h3);
+	font-size: 18px;
+}
+
+hr {
+	border: 1px dashed var(--hr);
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+blockquote {
+	background: var(--blockquotebg);
+	padding:12px;
+	border-style: dashed solid;
+	border-width:1px;
+	margin-top:10px;
+	overflow:scroll;
+	max-height:300px;
+}
+
+mark {
+	background: var(--highlight);
+	padding:2px;
+}
+
+#examplediv {
+	margin:10px;
+	border:1px solid black;
+	width:100px;
+	padding:4px;
+	transition: width 1s, background .5s, transform .5s ease;
+}
+
+#examplediv:hover {
+	width:200px;
+	background:YellowGreen;
+	transform: skewX(20deg);
+}
+
+/* abbey's code styling adjustments */
+.basetxt{
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tilt-hover {
+	transition: transform 0.3s ease;
+	opacity: 1;
+}
+
+.tilt-hover:hover {
+	transform: rotate(3deg) scale(1.2);
+}
+
+.addmargin{
+	padding-bottom: 30px;
+}
+
+/* Main row/container setups for horizontal layout */
+.navbar-container {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.nav-main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+	width: 100%;
+}
+
+/* Horizontal sub-navigation resources positioning */
+.nav-resources ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 15px;
+}
+
+
+.talina {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+}
+
+
+.trapezoid-box {
+	display: inline-block;
+	padding: 10px 25px;
+	background-color: #00ccff;
+	color: BLUE;              
+	font-size: 25px;
+	text-align: center;
+	clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+	transition: transform 0.3s ease;
+	margin: 5px;
+}
+
+.trapezoid-box p {
+	margin: 0;
+	font-weight: bold;
+}
+
+.tilt-out {
+	transition: transform 0.3s ease;
+	opacity: 1;
+}
+
+/* Adjusted hover layout action for standard horizontal items */
+.tilt-out:hover {
+	  transform: scale(1.1) translateX(30px);
+}
+
+
+
+
+.pointdown-box {
+	display: inline-block;
+	padding: 10px 25px;
+	background-color: #00ccff;
+	color: BLUE;
+	font-size: 25px;
+	text-align: center;
+	transition: transform 0.3s ease;
+	margin: 5px;
+}
+
+.trapezoid-box p {
+	margin: 0;
+	font-weight: bold;
+}
