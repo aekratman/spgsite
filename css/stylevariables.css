@@ -47,61 +47,72 @@ body {
 	font-size: 14px;
 	line-height: 1.5em;
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
+
 	
 a:link { color: var(--link); text-decoration:underline var(--linkunderline) wavy 1px; }
 a:visited { color: var(--link); text-decoration:underline var(--linkunderline) wavy 1px; }
 a:hover { color: var(--linkh); text-decoration:underline var(--linkhunderline) wavy 1px; }
 
-/* Customize the way the grid is set up here. */
+
+
+/* swaps */
 
 .layout {
-	width:90%; 
-	margin:3% auto; /* Centers the main grid and adds some space at the top. */
+	width: 90%; 
+	margin: 3% auto; 
 	display: grid;
-	grid:
-		"header header header" auto
-		"leftSide body body" 1fr
-		"footer footer footer" auto
-		/ 20% 50% auto;
+	grid-template-columns: 20% 55% 25%;
 	gap: 15px;
 }
 
 .header { 
-	grid-area: header; 
-	background:var(--headerbg);
-	border:1px solid var(--mainborder);
+	grid-column: 1 / -1; 
+	background: var(--headerbg);
+	border: 1px solid var(--mainborder);
 	background-image: linear-gradient(var(--grad1), var(--grad2));
+	width: 100%;
 }
 
 .leftSide { 
-	grid-area: leftSide;
-	background:var(--leftbg);
-	border:1px solid var(--mainborder);
+	grid-column: 1; 
+	background: var(--leftbg);
+	border: 1px solid var(--mainborder);
 	padding: 0;
+	flex-shrink: 0;
 }
 
 .body { 
-	grid-area: body; 
-	background:var(--bodybg);
-	border:1px solid var(--mainborder);
-	text-align:justify;
-	padding:8px 12px;
+	grid-column: 2 / span 1; 
+	background: var(--bodybg);
+	border: 1px solid var(--mainborder);
+	text-align: justify;
+	padding: 8px 12px;
+}
+
+.layout:not(:has(.rightSide)) .body {
+	grid-column: 2 / -1;
 }
 
 .rightSide { 
-	grid-area: rightSide;
+	grid-column: 3; 
 	overflow: hidden; 
-	background:var(--rightbg);
+	background: var(--rightbg);
+	width: 100%;
 }
 
 .footer { 
-	grid-area: footer;
-	background:var(--footerbg);
-	border:1px solid var(--mainborder);
-	padding:8px;
-	text-align:center;
+	grid-column: 1 / -1; 
+	background: var(--footerbg);
+	border: 1px solid var(--mainborder);
+	padding: 8px;
+	text-align: center;
 }
+
 
 /* Optional: instruct mobile browsers how to collapse the grid. */
 @media (max-width: 800px) {
@@ -246,7 +257,7 @@ mark {
 	padding-bottom: 30px;
 }
 
-/* Main row/container setups for horizontal layout */
+
 .navbar-container {
 	width: 100%;
 	padding: 10px;
@@ -324,3 +335,11 @@ mark {
 	margin: 0;
 	font-weight: bold;
 }
+
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px; /* Optional: adds space around your text */
+}
+

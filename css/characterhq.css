@@ -20,7 +20,7 @@
 	--text:Black;
 	--link:LightBlue;
 	--linkh:SlateGray;
-	--linkhunderline:YellowGreen;
+
 	
 	--mainborder:Black;
 	
@@ -41,6 +41,7 @@
 	--bodysummaryt:Black;
 }
 
+
 body {
 	background-color: var(--pagebg);
 	background-image: url("");
@@ -49,13 +50,13 @@ body {
 	background-attachment: fixed;
 	font-size: 14px;
 	line-height: 1.5em;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-	}
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
 	
-	a:link { color: var(--link); text-decoration:underline var(--linkunderline) wavy 1px; }
-	a:visited { color: var(--link); text-decoration:underline var(--linkunderline) wavy 1px; }
-	a:hover { color: var(--linkh); text-decoration:underline var(--linkhunderline) wavy 1px; }
 
 /* Customize the way the grid is set up here. */
 
@@ -154,8 +155,6 @@ summary:hover {
 }
 
 
-
-
 details {
 	width:100%;
 	margin:0 auto 4px;
@@ -169,7 +168,6 @@ details {
 }
 
 .navli {
-	border-bottom:1px dotted var(--mainborder);
 	list-style-type: none;
 }
 
@@ -179,7 +177,6 @@ details {
 }
 
 .navul {
-	border-right:1px dotted var(--mainborder);
 	padding:0px;
 	margin:4px auto;
 }
@@ -341,3 +338,10 @@ mark {
 transform: translateX(30px);
 transform:scale(1.2);
 }
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px; /* Optional: adds space around your text */
+}
+

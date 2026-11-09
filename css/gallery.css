@@ -36,3 +36,12 @@
 .galdiv { width: 45%; font-size: 15px; }
 }
 
+.greenscreen {
+    border: 2px solid green;
+    background: yellowgreen;
+    width: 400px;
+    height: auto
+
+}
+
+

@@ -62,17 +62,17 @@
 
 @font-face {
   font-family: 'brizel';
-  src: url(fontin/Brizel.ttf);
+  src: url(/fontin/Brizel.ttf);
 }
 
 @font-face {
   font-family: 'rowdy';
-  src: url(fontin/rowdy.otf);
+  src: url(/fontin/rowdy.otf);
 }
 
 @font-face {
   font-family: 'abyss';
-  src: url(fontin/abyss.otf);
+  src: url(/fontin/abyss.otf);
 }
 
 
@@ -85,13 +85,26 @@
 
 @font-face {
   font-family: 'barber';
-  src: url(fontin/barber.woff);
+  src: url(/fontin/barber.woff);
 }
 
 @font-face {
   font-family: 'talina';
   src: url(/fontin/Talina\ DEMO.otf);
 }
+
+
+
+
+@font-face {
+  font-family: 'robotkicks';
+  src: url(/fontin/RobotKicks.ttf);
+}
+
+.robotkicksfont {
+font-family: 'robotkicks';
+}
+
 
 .talina {
 font-family: 'talina';
