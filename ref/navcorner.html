@@ -1,16 +1,48 @@
-<!-- HEADER -->
 <div class="header">
   <center>
     <div class="basetxt">
       <!-- Flexbox container to align image left and text right -->
       <div class="dumb3" style="display: flex; align-items: center; justify-content: flex-start; gap: 30px; text-align: left; width: 100%;">
-        <a href="/"><img src="/spgpics/WR_logo_transp.png" style="max-height: 150px; margin: 5px; width: auto;"></a>
+        
+        <a href="/">
+          <img src="/spgpics/WR_logo_transp.png" style="max-height: 150px; margin: 5px; width: auto;">
+        </a>
+        
         <h1>Walter Robotics<br><br> Archival Sector</h1>
-        <h2>a steam powered giraffe archival fansite mock-up</h2>
-      </div>
-    </div>
+        <h2>a steam powered giraffe archival fansite</h2>
+      
+        <div class="qwertybox abyss tilt-hover">
+          <a href="/helloworld.html" id="triggerBtn" style="color: lightgreen; text-decoration: none; display: block; width: 100%; height: 100%;">
+            <span class="rotate-text">:]</span>
+          </a>
+        </div>
+
+        <div class="overlay" id="passcodeOverlay">
+          <div class="passcode-modal">
+            <h3>Enter Passcode</h3>
+            <p style="color: #6b7280; font-size: 14px;">Please enter your PIN!</p>
+            <div class="pin-container">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+            </div>
+
+<div class="error-message" id="errorMessage" style="color: #ef4444 !important; font-size: 14px !important; margin-bottom: 10px !important; display: none; visibility: visible !important; opacity: 1 !important;">!</div>
+            
+            <button class="cancel-btn" id="cancelBtn">Cancel</button>
+          </div>
+        </div>
+
+</div> 
+    </div> 
   </center>
-</div>
+</div> <!-- Closed header -->
+
 
 <div class="leftSide">
   <div class="boxtop"><h4>Navigation</h4></div>

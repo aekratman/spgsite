@@ -12,17 +12,15 @@ fetch('/ref/navcorner.html')
             const headerContent = doc.querySelector('.header');
             if (headerContent) {
                 const headerSlot = document.getElementById('shared-header');
-                headerSlot.className = "header"; 
-                headerSlot.innerHTML = headerContent.innerHTML;
+                headerSlot.outerHTML = headerContent.outerHTML;
             }
 
-            // 2. Find and inject the sidebar navigation content
             const sidebarContent = doc.querySelector('.leftSide');
             if (sidebarContent) {
                 const sidebarSlot = document.getElementById('shared-sidebar');
-                sidebarSlot.className = "leftSide"; 
-                sidebarSlot.innerHTML = sidebarContent.innerHTML;
+                sidebarSlot.outerHTML = sidebarContent.outerHTML;
             }
+            window.dispatchEvent(new Event('layoutReady'));
         })
         .catch(error => console.error("Error loading layout components:", error));
 });
