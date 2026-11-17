@@ -1,0 +1,178 @@
+:root {
+      --bg-color: #050a12;
+      --hud-cyan: #00f3ff;
+      --hud-amber: #ffae00;
+      --hud-red: #ff2a55;
+      --active-color: var(--hud-cyan);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .batterybody {
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 25px 25px, 25px 25px;
+      color: var(--active-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .hud-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 30px 40px;
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      background: rgba(5, 15, 28, 0.8);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 243, 255, 0.05);
+      clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    }
+
+    .hud-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+
+    /* Battery Outer Shell */
+    .battery-unit {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      filter: drop-shadow(0 0 8px var(--active-color));
+      transition: filter 0.4s ease;
+    }
+
+    .battery-frame {
+      position: relative;
+      width: 280px;
+      height: 100px;
+      border: 2px solid var(--active-color);
+      padding: 8px;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.6);
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      overflow: hidden;
+      transition: border-color 0.4s ease;
+    }
+
+    /* Sci-Fi Scanning Beam */
+    .scanline {
+      position: absolute;
+      top: 0;
+      left: -30%;
+      width: 25%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-20deg);
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .charging .scanline {
+      opacity: 1;
+      animation: scan 1.8s infinite linear;
+    }
+
+    @keyframes scan {
+      0% { left: -30%; }
+      100% { left: 130%; }
+    }
+
+    /* Individual Power Cells */
+    .cell {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cell.active {
+      background: var(--active-color);
+      box-shadow: 0 0 10px var(--active-color);
+      border-color: #ffffff;
+    }
+
+    .cell.pulse {
+      animation: cellPulse 0.8s infinite alternate;
+    }
+
+    @keyframes cellPulse {
+      from { opacity: 0.35; }
+      to { opacity: 1; }
+    }
+
+    /* Positive Terminal Cap */
+    .battery-cap {
+      width: 12px;
+      height: 44px;
+      background: var(--active-color);
+      clip-path: polygon(0 0, 100% 6px, 100% calc(100% - 6px), 0 100%);
+      transition: background 0.4s ease;
+    }
+
+    /* Readout & Controls */
+    .readout {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 12px;
+    }
+
+    .percentage {
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px var(--active-color);
+    }
+
+    .status-text {
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+    }
+
+      .real-status-text {
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      background: transparent;
+      color: var(--hud-cyan);
+      border: 1px solid var(--hud-cyan);
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--hud-cyan);
+      color: var(--bg-color);
+      box-shadow: 0 0 12px var(--hud-cyan);
+    }

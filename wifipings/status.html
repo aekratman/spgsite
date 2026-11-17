@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="A basic CSS/HTML template.">
+<link rel="icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>SPG Archive Work</title>
+
+<link rel="stylesheet" href="/css/stylevariables.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/gallery.css">
+<link rel="stylesheet" href="/css/status.css">
+    <script src="/js/layout.js" defer></script>
+    <script src="/js/secretmode.js" defer></script>
+    <script src="/js/status.js" defer></script>
+</head>
+
+
+<body>
+   <div class="layout">
+    <div id="shared-header"></div>
+    <div id="shared-sidebar"></div>
+
+<!-- MAIN BODY CONTENT -->
+
+<div class="body">
+<div class="batterybody">
+  <div class="hud-wrapper" id="hud">
+    <div class="hud-header">
+      <span>WR_001: RABBIT</span>
+      <span id="voltage">12.4V</span>
+    </div>
+
+    <div class="battery-unit" id="batteryUnit">
+      <div class="battery-frame" id="batteryFrame">
+        <div class="scanline"></div>
+      </div>
+      <div class="battery-cap"></div>
+    </div>
+
+    <div class="readout">
+      <div class="percentage" id="percentText">%</div>
+      <!-- <div class="status-text" id="statusText">INITIALIZING...</div> -->
+      <br><br><br>STATUS: <div class="real-status-text" id="spgStatusText">wahoo</div>
+    </div>
+
+    <div class="controls">
+      <button id="toggleChargeBtn">PAUSE CHARGE</button>
+      <button id="drainBtn">DISCHARGE</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="batterybody">
+  <div class="hud-wrapper" id="hud">
+    <div class="hud-header">
+      <span>WR_002: THE SPINE</span>
+      <span id="voltage">12.4V</span>
+    </div>
+
+    <div class="battery-unit" id="batteryUnit">
+      <div class="battery-frame" id="batteryFrame">
+        <div class="scanline"></div>
+      </div>
+      <div class="battery-cap"></div>
+    </div>
+
+    <div class="readout">
+      <div class="percentage" id="percentText">%</div>
+      <div class="status-text" id="statusText">INITIALIZING...</div>
+    </div>
+
+    <div class="controls">
+      <button id="toggleChargeBtn">PAUSE CHARGE</button>
+      <button id="drainBtn">DISCHARGE</button>
+      </div>
+    </div>
+  </div>
+</div>

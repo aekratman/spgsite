@@ -1,49 +1,95 @@
 <div class="header">
-  <center>
-    <div class="basetxt">
-      <!-- Flexbox container to align image left and text right -->
-      <div class="dumb3" style="display: flex; align-items: center; justify-content: flex-start; gap: 30px; text-align: left; width: 100%;">
-        
-        <a href="/">
-          <img src="/spgpics/WR_logo_transp.png" style="max-height: 150px; margin: 5px; width: auto;">
-        </a>
-        
-        <h1>Walter Robotics<br><br> Archival Sector</h1>
-        <h2>a steam powered giraffe archival fansite</h2>
-      
-        <div class="qwertybox abyss tilt-hover">
-          <a href="/helloworld.html" id="triggerBtn" style="color: lightgreen; text-decoration: none; display: block; width: 100%; height: 100%;">
-            <span class="rotate-text">:]</span>
+    <center>
+      <div class="basetxt">
+        <!-- Flexbox container to align image left and text right -->
+        <div class="dumb3" style="display: flex; align-items: center; justify-content: flex-start; gap: 30px; text-align: left; width: 100%;">
+          
+          <a href="/">
+            <img src="/spgpics/WR_logo_transp.png" style="max-height: 150px; margin: 5px; width: auto;" alt="Walter Robotics Logo">
           </a>
-        </div>
-
-        <div class="overlay" id="passcodeOverlay">
-          <div class="passcode-modal">
-            <h3>Enter Passcode</h3>
-            <p style="color: #6b7280; font-size: 14px;">Please enter your PIN!</p>
-            <div class="pin-container">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-              <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
-            </div>
-
-<div class="error-message" id="errorMessage" style="color: #ef4444 !important; font-size: 14px !important; margin-bottom: 10px !important; display: none; visibility: visible !important; opacity: 1 !important;">!</div>
-            
-            <button class="cancel-btn" id="cancelBtn">Cancel</button>
+          
+          <h1>Walter Robotics<br><br> Archival Sector</h1>
+          <h2>a steam powered giraffe archival fansite</h2>
+        
+          <div class="abyss kltilt-hover">
+            <a href="javascript:void(0);" id="triggerBtn" onclick="openModal(event)" style="color: lightgreen; text-decoration: none; display: block; width: 100%; height: 100%; gap: 1px; cursor: pointer;">
+              <span>
+                <center>
+                  <img src="/spgpics/keylog_assets/keylog.png" style="height: 150px" alt="Keylog">
+                  <!-- <p>art by storm</p> -->
+                </center>
+              </span>
+            </a>
           </div>
+          <button class="lock-keylog-btn" onclick="lockNotes()">Hide Internal Notes?</button>
+
+        </div>
+      </div>
+    </center>
+  <div class="overlay" id="secretOverlay">
+    <div class="passcode-modal">
+
+<div class="topof-modal basiic" style="font-size: 16px; text-align: left;">C://WR/WEBADMIN_PORTAL/PERMISSION/KEYLOG</div>
+
+      <div id="menu-view" class="modal-view active">
+        <div class="menu-greeting basiic">
+          <p style="margin: 20px; color: white;">hi hello hiya! i'm keylog! the loveable sentient virus which helps maintain the web presence of walter robotics.</p>
+            <p>What do you wish to view today?</p>
         </div>
 
-</div> 
-    </div> 
-  </center>
-</div> <!-- Closed header -->
+        <div class="menu-list basiic">
+          <button class="menu-btn" onclick="window.location.href='/wifipings/status.html'">
+            the walter automaton status page?
+          </button>
 
+          <button class="menu-btn" onclick="window.location.href='login.html'">
+            walter robotics email inboxes?
+          </button>
 
+          <button class="menu-btn" onclick="showPasscodeScreen()">
+            internal notes?
+          </button>
+        </div>
+
+        <button class="cancel-btn" onclick="closeModal()">Exit</button>
+      </div>
+
+      <!-- VIEW 2: 8-Digit Passcode Screen -->
+      <div id="passcode-view" class="modal-view">
+        <h3>Enter Passcode</h3>
+        <p class="passcode-subtext">Passcode required to access internal notes.</p>
+        
+        <div class="pin-container">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 0)" onkeydown="handleBackspace(event, 0)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 1)" onkeydown="handleBackspace(event, 1)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 2)" onkeydown="handleBackspace(event, 2)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 3)" onkeydown="handleBackspace(event, 3)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 4)" onkeydown="handleBackspace(event, 4)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 5)" onkeydown="handleBackspace(event, 5)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 6)" onkeydown="handleBackspace(event, 6)">
+          <input type="number" class="pin-input" maxlength="1" oninput="moveNext(this, 7)" onkeydown="handleBackspace(event, 7)">
+        </div>
+        
+        <div class="error-message" id="errorMsg">Incorrect passcode. Try again.</div>
+
+        <div class="nav-footer">
+          <button class="cancel-btn" onclick="showMenu()">← Back to Menu</button>
+          <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+      </div>
+
+      <div id="notes-view" class="modal-view">
+        <h3 style="color: white;">Internal Notes</h3>
+        <p style="color: white;">Access granted. All notes left by the Walter Robots are now visible!</p>
+        
+        <div class="nav-footer">
+          <button class="cancel-btn" onclick="showMenu()">← Back to Menu</button>
+          <button class="cancel-btn" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 <div class="leftSide">
   <div class="boxtop"><h4>Navigation</h4></div>
   <div class="talina">
@@ -62,4 +108,5 @@
     <li><a href="https://www.tumblr.com/spgarchive">spgarchive on tumblr</a></li>
     <li><a href="https://www.tumblr.com/automatonic-electronic">AE archive</a></li>
   </ul>
+</div>
 </div>
